@@ -1,0 +1,296 @@
+<?php
+namespace Topsdk\Topapi\Ability347\Request;
+use Topsdk\Topapi\TopUtil;
+
+class TaobaoXhotelRateUpdateRequest {
+
+    /**
+        不推荐使用，请使用out_rid
+     **/
+    private $gid;
+
+    /**
+        不推荐使用，请使用rateplan_code
+     **/
+    private $rpid;
+
+    /**
+        废弃
+     **/
+    private $name;
+
+    /**
+        每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
+     **/
+    private $inventoryPrice;
+
+    /**
+        不推荐使用
+     **/
+    private $addBed;
+
+    /**
+        不推荐使用
+     **/
+    private $addBedPrice;
+
+    /**
+        不推荐使用（仅支持CNY）
+     **/
+    private $currencyCode;
+
+    /**
+        不推荐使用
+     **/
+    private $shijiaTag;
+
+    /**
+        不推荐使用
+     **/
+    private $jishiquerenTag;
+
+    /**
+        系统商，一般不用填写，使用需要申请
+     **/
+    private $vendor;
+
+    /**
+        商家价格计划编码
+     **/
+    private $rateplanCode;
+
+    /**
+        商家房型ID
+     **/
+    private $outRid;
+
+    /**
+        日历价格开关， date：开关状态控制的是那一天 rate_status：开关状态。0，关闭；1，打开
+     **/
+    private $rateSwitchCal;
+
+    /**
+        锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
+     **/
+    private $lockEndTime;
+
+    /**
+        锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
+     **/
+    private $lockStartTime;
+
+    /**
+        在线预约关联关系推送，priceRuleNumber：加价规则序号
+     **/
+    private $onlineBookingBindingInfo;
+
+
+    public function getGid() : int{
+        return $this->gid;
+    }
+
+    public function setGid(int $gid){
+        $this->gid = $gid;
+    }
+
+    public function getRpid() : int{
+        return $this->rpid;
+    }
+
+    public function setRpid(int $rpid){
+        $this->rpid = $rpid;
+    }
+
+    public function getName() : string{
+        return $this->name;
+    }
+
+    public function setName(string $name){
+        $this->name = $name;
+    }
+
+    public function getInventoryPrice() : string{
+        return $this->inventoryPrice;
+    }
+
+    public function setInventoryPrice(string $inventoryPrice){
+        $this->inventoryPrice = $inventoryPrice;
+    }
+
+    public function getAddBed() : int{
+        return $this->addBed;
+    }
+
+    public function setAddBed(int $addBed){
+        $this->addBed = $addBed;
+    }
+
+    public function getAddBedPrice() : int{
+        return $this->addBedPrice;
+    }
+
+    public function setAddBedPrice(int $addBedPrice){
+        $this->addBedPrice = $addBedPrice;
+    }
+
+    public function getCurrencyCode() : int{
+        return $this->currencyCode;
+    }
+
+    public function setCurrencyCode(int $currencyCode){
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getShijiaTag() : int{
+        return $this->shijiaTag;
+    }
+
+    public function setShijiaTag(int $shijiaTag){
+        $this->shijiaTag = $shijiaTag;
+    }
+
+    public function getJishiquerenTag() : int{
+        return $this->jishiquerenTag;
+    }
+
+    public function setJishiquerenTag(int $jishiquerenTag){
+        $this->jishiquerenTag = $jishiquerenTag;
+    }
+
+    public function getVendor() : string{
+        return $this->vendor;
+    }
+
+    public function setVendor(string $vendor){
+        $this->vendor = $vendor;
+    }
+
+    public function getRateplanCode() : string{
+        return $this->rateplanCode;
+    }
+
+    public function setRateplanCode(string $rateplanCode){
+        $this->rateplanCode = $rateplanCode;
+    }
+
+    public function getOutRid() : string{
+        return $this->outRid;
+    }
+
+    public function setOutRid(string $outRid){
+        $this->outRid = $outRid;
+    }
+
+    public function getRateSwitchCal() : string{
+        return $this->rateSwitchCal;
+    }
+
+    public function setRateSwitchCal(string $rateSwitchCal){
+        $this->rateSwitchCal = $rateSwitchCal;
+    }
+
+    public function getLockEndTime() : string{
+        return $this->lockEndTime;
+    }
+
+    public function setLockEndTime(string $lockEndTime){
+        $this->lockEndTime = $lockEndTime;
+    }
+
+    public function getLockStartTime() : string{
+        return $this->lockStartTime;
+    }
+
+    public function setLockStartTime(string $lockStartTime){
+        $this->lockStartTime = $lockStartTime;
+    }
+
+    public function getOnlineBookingBindingInfo() : string{
+        return $this->onlineBookingBindingInfo;
+    }
+
+    public function setOnlineBookingBindingInfo(string $onlineBookingBindingInfo){
+        $this->onlineBookingBindingInfo = $onlineBookingBindingInfo;
+    }
+
+
+    public function getApiName() : string {
+        return "taobao.xhotel.rate.update";
+    }
+
+    public function toMap() : array{
+        $requestParam = array();
+        if (!TopUtil::checkEmpty($this->gid)) {
+            $requestParam["gid"] = TopUtil::convertBasic($this->gid);
+        }
+
+        if (!TopUtil::checkEmpty($this->rpid)) {
+            $requestParam["rpid"] = TopUtil::convertBasic($this->rpid);
+        }
+
+        if (!TopUtil::checkEmpty($this->name)) {
+            $requestParam["name"] = TopUtil::convertBasic($this->name);
+        }
+
+        if (!TopUtil::checkEmpty($this->inventoryPrice)) {
+            $requestParam["inventory_price"] = TopUtil::convertBasic($this->inventoryPrice);
+        }
+
+        if (!TopUtil::checkEmpty($this->addBed)) {
+            $requestParam["add_bed"] = TopUtil::convertBasic($this->addBed);
+        }
+
+        if (!TopUtil::checkEmpty($this->addBedPrice)) {
+            $requestParam["add_bed_price"] = TopUtil::convertBasic($this->addBedPrice);
+        }
+
+        if (!TopUtil::checkEmpty($this->currencyCode)) {
+            $requestParam["currency_code"] = TopUtil::convertBasic($this->currencyCode);
+        }
+
+        if (!TopUtil::checkEmpty($this->shijiaTag)) {
+            $requestParam["shijia_tag"] = TopUtil::convertBasic($this->shijiaTag);
+        }
+
+        if (!TopUtil::checkEmpty($this->jishiquerenTag)) {
+            $requestParam["jishiqueren_tag"] = TopUtil::convertBasic($this->jishiquerenTag);
+        }
+
+        if (!TopUtil::checkEmpty($this->vendor)) {
+            $requestParam["vendor"] = TopUtil::convertBasic($this->vendor);
+        }
+
+        if (!TopUtil::checkEmpty($this->rateplanCode)) {
+            $requestParam["rateplan_code"] = TopUtil::convertBasic($this->rateplanCode);
+        }
+
+        if (!TopUtil::checkEmpty($this->outRid)) {
+            $requestParam["out_rid"] = TopUtil::convertBasic($this->outRid);
+        }
+
+        if (!TopUtil::checkEmpty($this->rateSwitchCal)) {
+            $requestParam["rate_switch_cal"] = TopUtil::convertBasic($this->rateSwitchCal);
+        }
+
+        if (!TopUtil::checkEmpty($this->lockEndTime)) {
+            $requestParam["lock_end_time"] = TopUtil::convertBasic($this->lockEndTime);
+        }
+
+        if (!TopUtil::checkEmpty($this->lockStartTime)) {
+            $requestParam["lock_start_time"] = TopUtil::convertBasic($this->lockStartTime);
+        }
+
+        if (!TopUtil::checkEmpty($this->onlineBookingBindingInfo)) {
+            $requestParam["online_booking_binding_info"] = TopUtil::convertBasic($this->onlineBookingBindingInfo);
+        }
+
+        return $requestParam;
+    }
+
+    public function toFileParamMap() : array{
+        $fileParam = array();
+        return $fileParam;
+    }
+
+}
+
